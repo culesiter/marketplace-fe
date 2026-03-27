@@ -39,6 +39,16 @@ export default function Icons() {
           <rect y="5" width="13" height="3" />
         </symbol>
       </svg>
+      {/* SVG CHECK */}
+      <svg style={{ display: "none" }}>
+        <symbol
+          id="svg-check"
+          viewBox="0 0 11.517 7.74"
+          preserveAspectRatio="xMinYMin meet"
+        >
+          <path d="M4.095,7.74L0,3.645l1.64-1.64l2.455,2.455L9.877,0l1.64,1.64L4.095,7.74z" />
+        </symbol>
+      </svg>
     </>
   );
 }

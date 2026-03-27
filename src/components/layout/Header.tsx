@@ -3,12 +3,18 @@
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import "@/styles/sass/header.scss";
+import MobileMenu from "./MobileMenu";
+import MobileAccountMenu from "./MobileAccountMenu";
 
 export default function Header() {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMessageOpen, setIsMessageOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+
+  // Mobile side menus state
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileAccountOpen, setIsMobileAccountOpen] = useState(false);
 
   const cartRef = useRef<HTMLDivElement>(null);
   const messageRef = useRef<HTMLDivElement>(null);
@@ -48,7 +54,10 @@ export default function Header() {
             </figure>
           </Link>
 
-          <div className="mobile-menu-handler left primary">
+          <div 
+            className="mobile-menu-handler left primary"
+            onClick={() => setIsMobileMenuOpen(true)}
+          >
             <img src="/images/pull-icon.png" alt="pull-icon" />
           </div>
 
@@ -58,7 +67,10 @@ export default function Header() {
             </figure>
           </Link>
 
-          <div className="mobile-account-options-handler right secondary">
+          <div 
+            className="mobile-account-options-handler right secondary"
+            onClick={() => setIsMobileAccountOpen(true)}
+          >
             <span className="icon-user"></span>
           </div>
 
@@ -389,6 +401,14 @@ export default function Header() {
           </div>
         </header>
       </div>
+      <MobileMenu 
+        isOpen={isMobileMenuOpen} 
+        onClose={() => setIsMobileMenuOpen(false)} 
+      />
+      <MobileAccountMenu 
+        isOpen={isMobileAccountOpen} 
+        onClose={() => setIsMobileAccountOpen(false)} 
+      />
     </>
   );
 }

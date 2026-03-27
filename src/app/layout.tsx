@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Titillium_Web } from "next/font/google";
 import "../styles/globals.css";
 import "../styles/sass/general.scss";
+import "../styles/sass/section.scss";
+import "../styles/sass/product-sideshow.scss";
 import "../styles/vendor/tooltipster.css";
 import "../styles/vendor/simple-line-icons.css";
 import "../styles/sass/_reset.scss";
@@ -10,7 +12,7 @@ import Header from "@/components/layout/Header";
 import Icons from "@/components/ui/Icons";
 import Menu from "@/components/layout/Menu";
 import Footer from "@/components/layout/Footer";
-import AlertBox from "@/components/ui/AlertBox";
+import NotificationStack from "@/components/ui/NotificationStack";
 import StoreProvider from "./StoreProvider";
 
 const titilliumWeb = Titillium_Web({
@@ -48,7 +50,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <Icons />
-          <AlertBox />
+          <NotificationStack />
         </StoreProvider>
       </body>
     </html>

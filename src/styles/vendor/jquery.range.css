@@ -210,15 +210,15 @@
   top: -6px;
   box-sizing: border-box;
   border-radius: 50%;
-  background: url('../../../../public/images/range-bg.png') no-repeat center #00d7b3;
+  background: url('/images/range-bg.png') no-repeat center #00d7b3;
 }
 
 .theme-edragon.secondary .back-bar .pointer {
-  background: url('../../../../public/images/range-bg.png') no-repeat center #1396e1;
+  background: url('/images/range-bg.png') no-repeat center #1396e1;
 }
 
 .theme-edragon.tertiary .back-bar .pointer {
-  background: url('../../../../public/images/range-bg.png') no-repeat center #e61852;
+  background: url('/images/range-bg.png') no-repeat center #e61852;
 }
 
 .theme-edragon .back-bar .pointer-label {

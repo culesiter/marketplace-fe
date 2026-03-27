@@ -17,14 +17,13 @@ export default function AlertBox() {
       style={{
         visibility: "visible",
         opacity: 1,
-        position: "fixed",
-        zIndex: 100000,
+        position: "relative",
         transition: "0.3s ease-in-out",
-        inset: "auto 30px 30px auto",
+        margin: "0"
       }}
     >
       <figure className="survey-img">
-        <img src="images/dashboard/alert-logo.png" alt="survey-img" />
+        <img src="/images/dashboard/alert-logo.png" alt="survey-img" />
       </figure>
       <p className="text-header">Alerts &amp; Notifications</p>
       <p className="info">
@@ -37,7 +36,7 @@ export default function AlertBox() {
       </Link>
       <img
         className="close-btn"
-        src="images/dashboard/notif-close-icon.png"
+        src="/images/dashboard/notif-close-icon.png"
         alt="close-icon"
         onClick={() => dispatch(closeAlertBox())}
         style={{ cursor: "pointer" }}

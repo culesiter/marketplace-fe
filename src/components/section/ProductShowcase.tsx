@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 import "@/styles/sass/product-sideshow.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,6 +6,7 @@ import type { Swiper as SwiperType } from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import ProductCard from "../features/product/ProductCard";
 interface ProductShowcaseProps {
   theme?: "primary" | "secondary" | "";
   title?: string;
@@ -58,96 +59,8 @@ export default function ProductShowcase({
               }}
             >
               {Array.from({ length: 8 }).map((_, index) => (
-                <SwiperSlide key={index} className="product-item column">
-                  <div className="product-preview-actions">
-                    <figure className="product-preview-image">
-                      <img src="images/items/logos_m.jpg" alt="product-image" />
-                    </figure>
-
-                    <div className="preview-actions">
-                      <div className="preview-action">
-                        <Link href="service-page.html">
-                          <div className="circle tiny primary">
-                            <span className="icon-tag"></span>
-                          </div>
-                        </Link>
-                        <Link href="service-page.html">
-                          <p>Go to Item</p>
-                        </Link>
-                      </div>
-
-                      <div className="preview-action">
-                        <Link href="#">
-                          <div className="circle tiny secondary">
-                            <span className="icon-heart"></span>
-                          </div>
-                        </Link>
-                        <Link href="#">
-                          <p>Favourites +</p>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="product-info">
-                    <Link href="service-page.html">
-                      <p className="text-header">
-                        Professional Corporate Logos
-                      </p>
-                    </Link>
-                    <p className="product-description">
-                      Lorem ipsum dolor sit urarde...
-                    </p>
-                    <Link href="services.html">
-                      <p className="category secondary">Graphic Design</p>
-                    </Link>
-                    <p className="price">
-                      <span>$</span>260
-                    </p>
-                  </div>
-
-                  <hr className="line-separator" />
-
-                  <div className="user-rating">
-                    <Link href="author-profile.html">
-                      <figure className="user-avatar small">
-                        <img
-                          src="images/avatars/avatar_14.jpg"
-                          alt="user-avatar"
-                        />
-                      </figure>
-                    </Link>
-                    <Link href="author-profile.html">
-                      <p className="text-header tiny">Jenny_Block</p>
-                    </Link>
-                    <ul className="rating tooltip" title="Author's Reputation">
-                      <li className="rating-item">
-                        <svg className="svg-star">
-                          <use xlinkHref="#svg-star"></use>
-                        </svg>
-                      </li>
-                      <li className="rating-item">
-                        <svg className="svg-star">
-                          <use xlinkHref="#svg-star"></use>
-                        </svg>
-                      </li>
-                      <li className="rating-item">
-                        <svg className="svg-star">
-                          <use xlinkHref="#svg-star"></use>
-                        </svg>
-                      </li>
-                      <li className="rating-item">
-                        <svg className="svg-star">
-                          <use xlinkHref="#svg-star"></use>
-                        </svg>
-                      </li>
-                      <li className="rating-item empty">
-                        <svg className="svg-star">
-                          <use xlinkHref="#svg-star"></use>
-                        </svg>
-                      </li>
-                    </ul>
-                  </div>
+                <SwiperSlide key={index}>
+                  <ProductCard product={{ id: `home-prod-${index + 1}` }} />
                 </SwiperSlide>
               ))}
             </Swiper>
